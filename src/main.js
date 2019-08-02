@@ -1,8 +1,10 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import VueResource from 'vue-resource';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = true;
+Vue.use(VueResource);
 
 new Vue({
   router,
