@@ -1,4 +1,4 @@
-# seek4truth
+# Vue News Scraper App
 
 ## Project setup
 ```
