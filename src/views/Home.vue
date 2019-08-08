@@ -1,15 +1,21 @@
 <template>
-  <div class="home">
+  <div v-if="headlines === null" class="home">
+    <Spinner2/>
+  </div>
+  <div v-else class="home" >
+    <div v-for="headline in headlines">
     <Card 
-    v-for="headline in headlines"
-    :key="headline.title"
-    :authorSrc="headline.author"
-    :dateSrc="headline.date"
-    :summarySrc="headline.description"
-    :imgSrc="headline.imageUrl"
-    :titleSrc="headline.title"
-    :linkSrc="headline.link"
+    v-for="value in headline"
+    :key="value.title"
+    :domain="value.domain"
+    :authorSrc="value.author"
+    :dateSrc="value.date"
+    :summarySrc="value.description"
+    :imgSrc="value.imageUrl"
+    :titleSrc="value.title"
+    :linkSrc="value.link"
     ></Card>
+  </div>
   </div>
 </template>
 
@@ -18,8 +24,10 @@
   padding-top: 6rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
 }
+
+
 </style>
 
 
@@ -27,15 +35,18 @@
 <script>
 // @ is an alias to /src
 import Card from '../components/UI/Card';
+import Spinner2 from '../components/UI/Spinner2';
 
 export default {
   name: 'home',
   components: {
-    Card
+    Card,
+    Spinner2
+
   },
   data() {
     return {
-      headlines: []
+      headlines: null
     }
   },
   created() {
