@@ -3,7 +3,7 @@
     <Spinner2/>
   </div>
   <div v-else class="home" >
-    <div v-for="headline in headlines">
+    <div v-for="(headline, i) in headlines" :key="i" class="cardStack">
     <Card 
     v-for="value in headline"
     :key="value.title"
@@ -20,11 +20,24 @@
 </template>
 
 <style lang="scss" scoped>
+@import '../Sass/abstracts/_mixins.scss';
 .home {
   padding-top: 6rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: stretch;
+  @include respond(phone) {
+    padding-top: 4rem;
+  }
+  .cardStack {
+    display: flex;
+    flex: 1 0 auto;
+    width: 100vw;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 
