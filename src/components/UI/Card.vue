@@ -5,7 +5,7 @@
         <div>
         <h2>{{titleSrc}}</h2>
         <h3 v-if="authSrc"><i>{{authorSrc}}</i></h3>
-        <p v-if="dateSrc">{{dateSrc}}</p>
+        <span v-if="dateSrc"><i>{{dateSrc}}</i></span>
         <p v-if="summarySrc">{{summarySrc}}</p>
         <a :href="linkSrc" target="_blank">Source</a>
         </div>
@@ -38,13 +38,28 @@
 </script>
 
 <style lang="scss" scoped>
+@import '../../Sass/abstracts/_mixins.scss';
     .cardContainer {
         position: relative;
-        width: 24vw;
+        width: 18vw;
         align-self: auto;
         margin: 1rem;
         flex:1 0 auto;
+        flex-wrap: nowrap;
         background-color: rgba(white, 0.8);
+        @include respond(desktop) {
+            width: 20vw;
+        }
+        @include respond(tab-land) {
+            width: 32vw;
+        }
+        @include respond(tab-port) {
+            width: 40vw;
+        @include respond(phone) {
+            width: 100vw;
+            
+        }
+        }
         
         
         img {
@@ -70,7 +85,7 @@
             }
             p {
                 font-size: 1rem;
-                margin-bottom: 2rem;
+                margin-bottom: 1rem;
             }
             a {
                 text-decoration: none;
