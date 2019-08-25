@@ -7,6 +7,7 @@
       <router-link to="/about">About</router-link>
       </nav>
     </div>
+    <div id="toTop"></div>
     <router-view/>
   </div>
 </template>
@@ -34,7 +35,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #62716f;
+  color: rgb(98, 113, 111);
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
@@ -43,15 +44,17 @@ export default {
   overflow-x: hidden;
   font-size: 62.5%;
   background-image: url('./assets/patterns/escheresque.png');
+  scroll-behavior: smooth;
   
   
 }
 #navBar {
   z-index:500;
+  background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0.4));
   background-color: rgba(white, 0.8);
   width: 100%;
   padding: 0 0 0 .3rem;
-  box-shadow: 0 1px 2px black;
+  box-shadow: 0 -1px 5px black;
   position: fixed;
   display: flex;
   justify-content: space-between;

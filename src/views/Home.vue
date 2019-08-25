@@ -4,18 +4,21 @@
   </div>
   <div v-else class="home" >
     <div v-for="(headline, i) in headlines" :key="i" class="cardStack">
-    <Card 
-    v-for="value in headline"
-    :key="value.title"
-    :domain="value.domain"
-    :authorSrc="value.author"
-    :dateSrc="value.date"
-    :summarySrc="value.description"
-    :imgSrc="value.imageUrl"
-    :titleSrc="value.title"
-    :linkSrc="value.link"
-    ></Card>
-  </div>
+      <Card 
+      v-for="value in headline"
+      :key="value.title"
+      :domain="value.domain"
+      :category="value.category"
+      :authorSrc="value.author"
+      :dateSrc="value.date"
+      :summarySrc="value.description"
+      :imgSrc="value.imageUrl"
+      :titleSrc="value.title"
+      :linkSrc="value.link"
+      ></Card>
+    </div>
+
+  <AnchorButton/>
   </div>
 </template>
 
@@ -33,7 +36,7 @@
   .cardStack {
     display: flex;
     flex: 1 0 auto;
-    width: 100vw;
+    width: 100%;
     margin: 0 auto;
     flex-wrap: wrap;
     justify-content: center;
@@ -47,14 +50,20 @@
 
 <script>
 // @ is an alias to /src
+
+
 import Card from '../components/UI/Card';
 import Spinner2 from '../components/UI/Spinner2';
+import AnchorButton from '../components/UI/CircleButton';
+
+
 
 export default {
   name: 'home',
   components: {
     Card,
-    Spinner2
+    Spinner2,
+    AnchorButton
 
   },
   data() {

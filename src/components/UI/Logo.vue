@@ -20,11 +20,6 @@
     flex:1 1 auto;
     text-align: left;
     align-self: center;
-    img {
-        max-width: 80%;
-        height: 100%;
-        
-        
-    }
+    
 }
 </style>

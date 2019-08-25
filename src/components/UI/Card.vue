@@ -1,22 +1,24 @@
 <template>
-    <div class="cardContainer">
+    <article class="cardContainer">
+        <span class="category" v-if="category">{{category}}</span>
         <img :src="relativePathFilter(imgSrc)" :alt="imgSrc">
-        <span>{{domain}}.com</span>
-        <div>
         <h2>{{titleSrc}}</h2>
-        <h3 v-if="authSrc"><i>{{authorSrc}}</i></h3>
-        <span v-if="dateSrc"><i>{{dateSrc}}</i></span>
+        <div>
+        <h4>{{domain}}.com</h4>
+        <h3 v-if="authorSrc"><i>{{authorSrc}}</i></h3>
+        <h4 v-if="dateSrc"><i>{{dateSrc}}</i></h4>
         <p v-if="summarySrc">{{summarySrc}}</p>
         <a :href="linkSrc" target="_blank">Source</a>
         </div>
         
-    </div>
+    </article>
 </template>
 
 <script>
     export default {
         props: [
             'domain',
+            'category',
             'imgSrc', 
             'authorSrc',
             'titleSrc', 
@@ -46,9 +48,9 @@
         margin: 1rem;
         flex:1 0 auto;
         flex-wrap: nowrap;
-        background-color: rgba(white, 0.8);
+        background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0));
         @include respond(desktop) {
-            width: 20vw;
+            width: 26vw;
         }
         @include respond(tab-land) {
             width: 32vw;
@@ -60,40 +62,65 @@
             
         }
         }
-        
+
+        .category {
+            position: absolute;
+            width: 100%;
+            top: -1.7rem;
+            padding:.3rem .5rem .3rem 0rem;
+            right: 0rem;
+            text-align: right;
+            background: linear-gradient(to left, rgba(98, 113, 111, 1), rgba(255,255,255,0));
+            text-shadow: 0 1px 1px black;
+            color: white;
+            font-size: .9rem;
+            
+            
+        }
         
         img {
             width: 100%;
-            height:40%;
-            margin-bottom: 1rem;
         }
-        span {
-            font-size: .9rem;
+        h2 {
+            position: absolute;
+            top:-1.3rem;
+            left:0rem;
+            padding: 1rem;
+            background-color: rgba(white,0.8);
+            font-size: 1.5rem;
+            
+            
         }
         div {
             padding: .5rem 1rem 1rem 1rem;
-            h2 {
-                position: absolute;
-                top:1rem;
-                left:0rem;
-                padding: 1rem;
-                background-color: rgba(white,0.8);
-                font-size: 1.5rem;
+            z-index: 50;
+            h4 {
+                font-size: .9rem;
+                font-weight: 400;
+                
             }
             h3 {
                 font-size: 1rem;
             }
             p {
                 font-size: 1rem;
-                margin-bottom: 1rem;
+                margin-bottom: 2rem;
             }
             a {
+                
+                display: inline-block;
                 text-decoration: none;
                 font-size: .8rem;
-                background-color: rgba(230, 230, 230,0.8);
-                color: #62716f;
+                background-color: rgba(98, 113, 111, .6);
+                color: white;
                 padding:.5rem 2rem;
                 border-radius: .4rem;
+                transition: text-shadow .3s ease;
+                
+                &:hover {
+                    text-shadow: 0 1px 1px white;
+                    
+                }
                 
             }
         }
