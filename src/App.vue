@@ -8,7 +8,9 @@
       </nav>
     </div>
     <div id="toTop"></div>
-    <router-view/>
+    <main>
+      <router-view/>
+    </main>
   </div>
 </template>
 

@@ -3,10 +3,11 @@
     <Spinner2/>
   </div>
   <div v-else class="home" >
-    <div v-for="(headline, i) in headlines" :key="i" class="cardStack">
+    <section v-for="(headline, i) in headlines" :key="i" class="cardStack">
+      
       <Card 
-      v-for="value in headline"
-      :key="value.title"
+      v-for="(value, i) in headline"
+      :key="i"
       :domain="value.domain"
       :category="value.category"
       :authorSrc="value.author"
@@ -15,9 +16,32 @@
       :imgSrc="value.imageUrl"
       :titleSrc="value.title"
       :linkSrc="value.link"
-      ></Card>
-    </div>
-
+      />
+      
+      <LinkList
+      v-for="(value, i) in headline"
+      :key="i"
+      :linkTitle1="value.title1"
+      :linkDate1="value.date1"
+      :linkUrl1="value.link1"
+      :linkTitle2="value.title2"
+      :linkDate2="value.date2"
+      :linkUrl2="value.link2"
+      :linkTitle3="value.title3"
+      :linkDate3="value.date3"
+      :linkUrl3="value.link3"
+      :linkTitle4="value.title4"
+      :linkDate4="value.date4"
+      :linkUrl4="value.link4"
+      :linkTitle5="value.title5"
+      :linkDate5="value.date5"
+      :linkUrl5="value.link5"
+      :linkTitle6="value.title6"
+      :linkDate6="value.date6"
+      :linkUrl6="value.link6"
+       />
+    </section>
+    
   <AnchorButton/>
   </div>
 </template>
@@ -53,6 +77,7 @@
 
 
 import Card from '../components/UI/Card';
+import LinkList from '../components/UI/LinkList';
 import Spinner2 from '../components/UI/Spinner2';
 import AnchorButton from '../components/UI/CircleButton';
 
@@ -62,6 +87,7 @@ export default {
   name: 'home',
   components: {
     Card,
+    LinkList,
     Spinner2,
     AnchorButton
 

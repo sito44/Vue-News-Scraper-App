@@ -1,14 +1,14 @@
 <template>
-    <article class="cardContainer">
+    <article class="cardContainer" >
         <span class="category" v-if="category">{{category}}</span>
-        <img :src="relativePathFilter(imgSrc)" :alt="imgSrc">
+        <img v-if="imgSrc" :src="relativePathFilter(imgSrc)" :alt="imgSrc">
         <h2>{{titleSrc}}</h2>
         <div>
-        <h4>{{domain}}.com</h4>
+        <h4 v-if="!domain.match(/\b(\w*snlsnetwork\w*)\b/g)">{{domain}}.com</h4>
         <h3 v-if="authorSrc"><i>{{authorSrc}}</i></h3>
         <h4 v-if="dateSrc"><i>{{dateSrc}}</i></h4>
         <p v-if="summarySrc">{{summarySrc}}</p>
-        <a :href="linkSrc" target="_blank">Source</a>
+        <a v-if="!domain.match(/\b(\w*snlsnetwork\w*)\b/g)" :href="linkSrc" target="_blank">Source</a>
         </div>
         
     </article>
@@ -32,6 +32,7 @@
                             :
                             `https://www.${this.domain}.com/${this.imgSrc.slice(1)}`;
             }
+            
         }
         };
         
