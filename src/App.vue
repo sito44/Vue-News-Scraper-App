@@ -4,7 +4,7 @@
       <Logo :imglocation="logolocation"></Logo>
       <nav class="navigation">
       <router-link class="route-link" to="/">Home</router-link> |
-      <router-link class="route-link"to="/about">About</router-link>
+      <router-link class="route-link" to="/about">About</router-link>
       </nav>
     </div>
     <div id="toTop"></div>
