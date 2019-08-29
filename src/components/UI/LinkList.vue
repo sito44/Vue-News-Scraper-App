@@ -77,12 +77,12 @@ linkUrl6
 @import '../../Sass/abstracts/_mixins.scss';
 
 .container {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 1);
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    padding: .04rem;
+    
            
         @include respond(phone) {
            flex-direction: column;   

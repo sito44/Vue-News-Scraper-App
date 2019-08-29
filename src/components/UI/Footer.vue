@@ -40,9 +40,15 @@
             top:2.6rem;
             left:3.5rem;
             color: white;
-            width:62%;
+            width:78vw;
             margin: 0 auto;
             font-size: .01rem;
+        @include respond(big-desktop){
+            width:54vw;
+        }
+        @include respond(desktop) {
+           width:80vw;
+        }
         }
         ul {
             margin-top: 3rem;
