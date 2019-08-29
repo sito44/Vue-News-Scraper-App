@@ -101,9 +101,6 @@ export default {
   created() {
     this.fetchData();
   },
-  updated() {
-    console.log(this.headlines);
-  },
   methods: {
     fetchData() {
       let vm = this;
@@ -112,10 +109,9 @@ export default {
         return res.json();
       })
       .then(data => {
-        console.log(data);
         vm.headlines = data;
       })
-      .catch(err => console.log(err));
+      .catch(err => err);
     }
   }
 }
