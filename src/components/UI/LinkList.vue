@@ -74,20 +74,35 @@ linkUrl6
 </script>
 
 <style lang="scss" scoped>
+@import '../../Sass/abstracts/_mixins.scss';
+
 .container {
     background-color: white;
     width: 100vw;
-    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: .04rem;
+        
+        @include respond(phone) {
+           flex-direction: column;   
+        }
+    
     .link-container {
         width: 30vw;
         flex: 0 4 auto;
         text-align: left;
+        @include respond(phone) {
+           width: 100vw;
+           text-align: center;   
+        }
         a {
-            color: rgba(98, 113, 111, 1)
+            font-size: .7rem;
+            color: rgba(98, 113, 111, 1);
+        }
+        span {
+            font-size: .8rem;
+            
         }
         
 

@@ -58,11 +58,12 @@
         }
         @include respond(tab-port) {
             width: 40vw;
+        }
         @include respond(phone) {
             width: 100vw;
             
         }
-        }
+        
 
         .category {
             position: absolute;
