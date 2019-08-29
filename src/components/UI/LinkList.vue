@@ -83,7 +83,7 @@ linkUrl6
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: .04rem;
-        
+           
         @include respond(phone) {
            flex-direction: column;   
         }

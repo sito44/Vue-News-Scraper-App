@@ -54,6 +54,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
+  margin-bottom: 5.6rem;
   @include respond(phone) {
     padding-top: 4rem;
   }
