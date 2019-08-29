@@ -21,6 +21,7 @@
         background-size: 85%;
         box-shadow: -2px 0px 4px black;
         opacity: .9;
+        z-index: 500;
         @include respond(big-desktop){
             height:10vh;
             width: 5vw;
