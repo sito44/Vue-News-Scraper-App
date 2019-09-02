@@ -27,3 +27,6 @@ yarn run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+#### Link:
+* http://seek4truth.net.s3-website-us-west-1.amazonaws.com
